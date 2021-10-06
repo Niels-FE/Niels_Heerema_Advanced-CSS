@@ -1,0 +1,32 @@
+body {
+    @include main-grid;
+}
+main {
+    @include main-grid;
+    
+    & .testimonial {
+        margin: 20px auto;
+        display: grid;
+    }
+    & .portfolio {
+        display: grid;
+        grid-gap: 20px;
+    }
+}
+@media (min-width: 420px){
+    main .portfolio {
+        grid-template-columns: 1fr;
+    }
+}
+@media (min-width: 768px){
+    main .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px){
+    main .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto
+    }
+}
+

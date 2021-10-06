@@ -1,0 +1,116 @@
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'template-grid';
+@import 'icons'; 
+@import 'winc-code';
+
+body {
+    background-color: $site-gray;
+    font: 400 14px 'Nunito Sans', sans-serif;
+}
+.testimonial {
+    width: 250px;
+    max-width: 250px;
+    box-shadow: $box-shadow;
+    border-radius: $elements-radius;
+    background-color: $site-purple;
+    position: relative;
+}
+.testimonial_text-holder {
+    color: #6c5555;
+    border-top-left-radius: $elements-radius;
+    border-top-right-radius: $elements-radius;
+    padding: $elements-padding;
+    padding-bottom: 30px;
+    background-color: $site-white;
+    & p {
+        padding: $elements-padding;
+        font-weight: 700;
+    }
+}
+.testimonial_name-holder {
+    background-color: transparent;
+    color: $site-white;
+    position: relative;
+    padding: $elements-padding;
+    & p {
+        text-align: center;
+        font-weight: 700;
+    }
+    & p:first-of-type {
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding-top: 20px;
+    }
+    & p:last-child {
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: hsl(239, 52%, 80%);
+    }
+}
+.testimonial_name-holder--image-holder {
+    position: absolute;
+    top:-30px;
+    left: calc(50% - 30px);
+    background-color: $site-white;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    & img {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+    }
+}
+.testimonial_button-holder {
+    @include flexBox(center);
+    background-color: #1c1c4a;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 7%;
+    & button{
+        display: none;
+    }
+}
+.testimonial:hover .testimonial_button-holder {
+    opacity: 1;
+    transition: 250ms opacity ease-in;
+    z-index: 10;
+    & button {
+        cursor: pointer;
+        color: #1c1c4a;
+        font-weight: 700;
+        display: block;
+        background: white;
+        padding: 5px 10px;
+    }
+}
+aside {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    font-size: 16px;
+    color: white;
+    & .social-media {
+        cursor:pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        transform: translateX(190px);
+        width: 200px;
+        &:hover {
+            transform: translateX(0px);
+            transition: 500ms transform ease-in-out;
+        }
+    }
+    & a {
+        color: white;
+    }
+}
